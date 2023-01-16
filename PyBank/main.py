@@ -2,18 +2,18 @@
 import os
 import csv
 
-# ----------------------------------------- INSTRUCTIONS --------------------------------------------
+# ----------------------------------------- INSTRUCTIONS -------------------------------------------------
 # The total number of months included in the dataset
 # The net total amount of "Profit/Losses" over the entire period
 # The changes in "Profit/Losses" over the entire period, and then the average of those changes
 
 # The greatest increase in profits (date and amount) over the entire period
 # The greatest decrease in profits (date and amount) over the entire periodo
-# ---------------------------------------------------------------------------------------------------
+# --------------------------------------------------------------------------------------------------------
 
 
 
-#  --------------------- LIST CREATION -----------------------
+#  ----------------------------------------- LIST CREATION -----------------------------------------------
 # stores each month
 total_month = []
 
@@ -22,7 +22,7 @@ total_profit = []
 
 # stores the change in profit from one month to the next
 monthly_change_profit = []
-#-------------------------------------------------------------
+#---------------------------------------------------------------------------------------------------------
 
 
 
@@ -80,8 +80,10 @@ min_decrease_month = {total_month[min_month_index]}
 
 # print(max_increase_month)
 # print(min_decrease_month)
-
 # ---------------------------------------------------------------------------------------------------------------
+
+# --------------------------------------------- PRINT SUMMARY ---------------------------------------------------
+# print each of the following variables.
 print("Financial Analysis")
 print("----------------------------")
 print(f"Total Months: {len(total_month)}")
@@ -89,4 +91,26 @@ print(f"Total: ${sum(total_profit)}")
 print(f"Average Change: ${round(sum(monthly_change_profit)/len(monthly_change_profit),2)}")
 print(f"Greatest Increase in Profits: {max_increase_month} (${(str(max_profit))})")
 print(f"Greatest Decrease in Profits: {min_decrease_month} (${(str(min_profit))})")
+# ---------------------------------------------------------------------------------------------------------------
 
+# ----------------------------------------- OUTPUT SUMMARY ------------------------------------------------------
+# identify output file location
+output_file = os.path.join("/Users/calebsteeves/Desktop/python-challenge/PyBank/analysis/budget.txt")
+
+# open output file and write to it.
+with open(output_file, "w") as final_output:
+
+    final_output.write("Financial Analysis")
+
+    final_output.write("----------------------------\n")
+
+    final_output.write(f"Total Months: {len(total_month)}\n")
+
+    final_output.write(f"Total: ${sum(total_profit)}\n")
+
+    final_output.write(f"Average Change: ${round(sum(monthly_change_profit)/len(monthly_change_profit),2)}\n")
+
+    final_output.write(f"Greatest Increase in Profits: {max_increase_month} ${max_profit}\n")
+
+    final_output.write(f"Greatest Decrease in Profits: {min_decrease_month} ${min_profit}\n")
+# ---------------------------------------------------------------------------------------------------------------
