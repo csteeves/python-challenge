@@ -104,7 +104,7 @@ output_file = os.path.join("/Users/calebsteeves/Desktop/python-challenge/PyBank/
 # open output file and write to it.
 with open(output_file, "w") as final_output:
 
-    final_output.write("Financial Analysis")
+    final_output.write("Financial Analysis\n")
 
     final_output.write("----------------------------\n")
 
