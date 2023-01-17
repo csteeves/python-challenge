@@ -59,6 +59,10 @@ with open(csvpath) as csv_file:
     for x in range(len(total_profit)-1):
         monthly_change_profit.append(total_profit[x+1]-total_profit[x])
 
+# Calculate AVERAGE MONTHLY CHANGE
+avg_monthly_change = {round(sum(monthly_change_profit)/len(monthly_change_profit),2)}
+#print(avg_monthly_change)
+
 # verified that the list filled out properly        
     # print(*monthly_change_profit, sep=",")
     # print(len(monthly_change_profit))
@@ -88,7 +92,7 @@ print("Financial Analysis")
 print("----------------------------")
 print(f"Total Months: {len(total_month)}")
 print(f"Total: ${sum(total_profit)}")
-print(f"Average Change: ${round(sum(monthly_change_profit)/len(monthly_change_profit),2)}")
+print(f"Average Change: ${avg_monthly_change}")
 print(f"Greatest Increase in Profits: {max_increase_month} (${(str(max_profit))})")
 print(f"Greatest Decrease in Profits: {min_decrease_month} (${(str(min_profit))})")
 # ---------------------------------------------------------------------------------------------------------------
@@ -108,7 +112,7 @@ with open(output_file, "w") as final_output:
 
     final_output.write(f"Total: ${sum(total_profit)}\n")
 
-    final_output.write(f"Average Change: ${round(sum(monthly_change_profit)/len(monthly_change_profit),2)}\n")
+    final_output.write(f"Average Change: ${avg_monthly_change}\n")
 
     final_output.write(f"Greatest Increase in Profits: {max_increase_month} ${max_profit}\n")
 
