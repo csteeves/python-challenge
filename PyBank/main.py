@@ -28,7 +28,7 @@ monthly_change_profit = []
 
 #----------------------------------------- BEGIN ANALYSIS ------------------------------------------------
 # define path for CSV file
-csvpath = os.path.join("/Users/calebsteeves/Desktop/python-challenge/PyBank/Resources/budget_data.csv")
+csvpath = os.path.join("Resources", "budget_data.csv")
 
 # Read in the CSV file
 with open(csvpath) as csv_file:

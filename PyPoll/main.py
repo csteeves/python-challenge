@@ -19,7 +19,7 @@ votes_rd = []
 # ------------------------------------------- ANALYSIS -------------------------------------------------------
 
 # determine path to CSV file
-csvpath = os.path.join("/Users/calebsteeves/Desktop/python-challenge/PyPoll/Resources/election_data.csv")
+csvpath = os.path.join("Resources","election_data.csv")
 
 # open CSV file and read it in
 with open(csvpath) as csv_file:
